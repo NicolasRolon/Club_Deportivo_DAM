@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Club_Deportivo_DAM">
         <activity
+            android:name=".Activity_MenuPrincipal"
+            android:exported="false" />
+        <activity
             android:name=".moduloSocios"
             android:exported="false" />
         <activity

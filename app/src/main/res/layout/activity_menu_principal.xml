@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_MenuPrincipal">
+
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo_aplicacion_clubdeportivo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gemini_generated_image_nu2lsenu2lsenu2l__1_" />
+
+    <!-- Grupo 1: Botón Agregar Cliente -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/grupoAgregarCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.38">
+
+        <ImageButton
+            android:id="@+id/btnAgregarCliente"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/boton_agregar"
+            android:scaleType="fitCenter"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Agregar nuevo cliente"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvAgregarCliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agregar Cliente"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/btnAgregarCliente"
+            app:layout_constraintStart_toStartOf="@+id/btnAgregarCliente"
+            app:layout_constraintEnd_toEndOf="@+id/btnAgregarCliente" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- Grupo 2: Botón Ver Socios -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/grupoVerSocios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_middle_row">
+
+        <ImageButton
+            android:id="@+id/btnVerSocios"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Ver socios del club"
+            android:scaleType="fitCenter"
+            android:src="@drawable/boton_socios"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvVerSocios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver Socios"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/btnVerSocios"
+            app:layout_constraintStart_toStartOf="@id/btnVerSocios"
+            app:layout_constraintTop_toBottomOf="@id/btnVerSocios" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- Grupo 3: Botón No Socios -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/grupoNoSocios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline_center"
+        app:layout_constraintTop_toTopOf="@+id/guideline_middle_row">
+
+        <ImageButton
+            android:id="@+id/btnNoSocios"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Ver no socios del club"
+            android:scaleType="fitCenter"
+            android:src="@drawable/boton_no_socios"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvNoSocios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Socios"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/btnNoSocios"
+            app:layout_constraintStart_toStartOf="@id/btnNoSocios"
+            app:layout_constraintTop_toBottomOf="@id/btnNoSocios" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Grupo 4: Botón Cuotas -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/grupoCuotas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_bottom_row">
+
+        <ImageButton
+            android:id="@+id/btnCuotas"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Gestionar Cuotas"
+            android:scaleType="fitCenter"
+            android:src="@drawable/boton_cuotas"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCuotas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cuotas"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/btnCuotas"
+            app:layout_constraintStart_toStartOf="@id/btnCuotas"
+            app:layout_constraintTop_toBottomOf="@id/btnCuotas" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!-- Grupo 5: Botón Pagos -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/grupoPagos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline_center"
+        app:layout_constraintTop_toTopOf="@+id/guideline_bottom_row">
+
+        <ImageButton
+            android:id="@+id/btnPagos"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Gestionar Pagos"
+            android:scaleType="fitCenter"
+            android:src="@drawable/boton_pagos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvPagos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pagos"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/btnPagos"
+            app:layout_constraintStart_toStartOf="@id/btnPagos"
+            app:layout_constraintTop_toBottomOf="@id/btnPagos" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Guías para alinear los botones primera fila -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <!-- Guías para alinear los botones segunda fila -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_middle_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78" />
+
+
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="Cerrar Sesión"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
