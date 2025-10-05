@@ -6,6 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FirstAppActivity">
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo_aplicacion_clubdeportivo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 <Button
     android:id="@+id/btnIniciarSesion"
     android:layout_width="wrap_content"
@@ -24,9 +35,12 @@
         android:singleLine="true"
         android:maxLines="1"
         android:layout_marginBottom="32dp"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btnIniciarSesion"/>
+        app:layout_constraintBottom_toTopOf="@id/etPassword"
+        android:hint="Usuario"
+        />
 
     <android.widget.EditText
         android:id="@+id/etPassword"
@@ -35,9 +49,11 @@
         android:singleLine="true"
         android:maxLines="1"
         android:layout_marginBottom="32dp"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/etName"/>
+        app:layout_constraintBottom_toTopOf="@id/btnIniciarSesion"
+        android:hint="Contraseña" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -47,6 +63,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gemini_generated_image_nu2lsenu2lsenu2l__1_" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
