@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Club_Deportivo_DAM">
         <activity
+            android:name=".moduloSocios"
+            android:exported="false" />
+        <activity
+            android:name=".ModuloNoSocios"
+            android:exported="false" />
+        <activity
+            android:name=".AgregarCliente"
+            android:exported="false" />
+        <activity
             android:name=".ModuloSociosBuscadorDni"
             android:exported="false" />
         <activity
