@@ -12,6 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Club_Deportivo_DAM">
         <activity
+            android:name=".PagoDiarioActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Club_Deportivo_DAM" />
+        <activity
+            android:name=".CuotasActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Club_Deportivo_DAM" />
+        <activity
             android:name=".Activity_MenuPrincipal"
             android:exported="false" />
         <activity
