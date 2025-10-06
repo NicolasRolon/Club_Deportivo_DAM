@@ -4,7 +4,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".moduloSocios">
+    tools:context=".PagoDiarioActivity">
 
     <ImageView
         android:id="@+id/backgroundImageView2"
@@ -45,13 +45,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
     <android.widget.EditText
         android:id="@+id/etNombre"
         android:layout_width="300dp"
         android:layout_height="48dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="276dp"
         android:background="@color/white"
         android:hint="Ingresar Nombre del socio"
         android:maxLines="1"
@@ -105,7 +103,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.widget.EditText
-        android:id="@+id/etMail3"
+        android:id="@+id/etPrecioActividad"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="520dp"
