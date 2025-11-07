@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FirstAppActivity">
+
     <ImageView
         android:id="@+id/backgroundImageView"
         android:layout_width="0dp"
@@ -17,43 +18,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
-<Button
-    android:id="@+id/btnIniciarSesion"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Iniciar Sesión"
-    android:background="@color/black"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"/>
 
-    <android.widget.EditText
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Sesión"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
         android:id="@+id/etName"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:maxLines="1"
         android:layout_marginBottom="32dp"
         android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/etPassword"
         android:hint="Usuario"
-        />
+        android:inputType="text"
+        android:textColor="@android:color/black"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintBottom_toTopOf="@id/etPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <android.widget.EditText
+    <EditText
         android:id="@+id/etPassword"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:maxLines="1"
         android:layout_marginBottom="32dp"
         android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textColor="@android:color/black"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:maxLines="1"
+        android:singleLine="true"
         app:layout_constraintBottom_toTopOf="@id/btnIniciarSesion"
-        android:hint="Contraseña" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"

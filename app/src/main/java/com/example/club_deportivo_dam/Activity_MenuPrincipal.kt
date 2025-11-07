@@ -1,6 +1,8 @@
 package com.example.club_deportivo_dam
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,6 +13,41 @@ class Activity_MenuPrincipal : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_menu_principal)
+
+        // 1. Botón Agregar Cliente
+        val btnAgregarCliente = findViewById<ImageButton>(R.id.btnAgregarCliente)
+        btnAgregarCliente.setOnClickListener {
+            val intent = Intent(this, AgregarCliente::class.java)
+            startActivity(intent)
+        }
+
+        // 2. Botón Ver Socios
+        val btnVerSocios = findViewById<ImageButton>(R.id.btnVerSocios)
+        btnVerSocios.setOnClickListener {
+            val intent = Intent(this, moduloSocios::class.java)
+            startActivity(intent)
+        }
+
+        // 3. Botón No Socios
+        val btnNoSocios = findViewById<ImageButton>(R.id.btnNoSocios)
+        btnNoSocios.setOnClickListener {
+            val intent = Intent(this, ModuloNoSocios::class.java)
+            startActivity(intent)
+        }
+
+        // 4. Botón Cuotas
+        val btnCuotas = findViewById<ImageButton>(R.id.btnCuotas)
+        btnCuotas.setOnClickListener {
+            val intent = Intent(this, CuotasActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 5. Botón Pagos
+        val btnPagos = findViewById<ImageButton>(R.id.btnPagos)
+        btnPagos.setOnClickListener {
+            val intent = Intent(this, PagoDiarioActivity::class.java)
+            startActivity(intent)
+        }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

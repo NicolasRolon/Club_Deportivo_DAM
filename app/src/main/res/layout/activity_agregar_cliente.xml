@@ -32,15 +32,17 @@
         app:srcCompat="@drawable/gemini_generated_image_nu2lsenu2lsenu2l__1_" />
 
 
-    <android.widget.EditText
+    <EditText
         android:id="@+id/etDni"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="228dp"
         android:background="@color/white"
         android:hint="Ingresar DNI del cliente"
+        android:inputType="number"
         android:maxLines="1"
         android:singleLine="true"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,43 +62,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.widget.EditText
+    <EditText
         android:id="@+id/etApellido"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="348dp"
         android:background="@color/white"
         android:hint="Ingresar apellido del cliente"
+        android:inputType="textPersonName"
         android:maxLines="1"
         android:singleLine="true"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.widget.EditText
+    <EditText
         android:id="@+id/etNombre"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="288dp"
         android:background="@color/white"
-        android:hint="Ingresar Nombre del cliente"
+        android:hint="Ingresar nombre del cliente"
+        android:inputType="textPersonName"
         android:maxLines="1"
         android:singleLine="true"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.widget.EditText
+    <EditText
         android:id="@+id/etMail"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="408dp"
         android:background="@color/white"
         android:hint="Ingresar mail del cliente"
+        android:inputType="textEmailAddress"
         android:maxLines="1"
         android:singleLine="true"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
