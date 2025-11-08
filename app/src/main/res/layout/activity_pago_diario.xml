@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -30,87 +31,111 @@
         app:srcCompat="@drawable/gemini_generated_image_nu2lsenu2lsenu2l__1_" />
 
 
-    <android.widget.EditText
+    <EditText
         android:id="@+id/etDni"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="212dp"
-        android:background="@color/white"
+        android:background="@drawable/fondo_edittext_redondeado"
         android:hint="Ingresar DNI del socio"
+        android:inputType="number"
         android:maxLines="1"
+        android:padding="12dp"
         android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <android.widget.EditText
+    <EditText
         android:id="@+id/etNombre"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="276dp"
-        android:background="@color/white"
+        android:background="@drawable/fondo_edittext_redondeado"
         android:hint="Ingresar Nombre del socio"
+        android:inputType="textPersonName"
         android:maxLines="1"
+        android:padding="12dp"
         android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.widget.EditText
+    <EditText
         android:id="@+id/etApellido"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="340dp"
-        android:background="@color/white"
+        android:background="@drawable/fondo_edittext_redondeado"
         android:hint="Ingresar apellido del socio"
+        android:inputType="textPersonName"
         android:maxLines="1"
+        android:padding="12dp"
         android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.widget.EditText
+    <EditText
         android:id="@+id/etMail"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="400dp"
-        android:background="@color/white"
+        android:background="@drawable/fondo_edittext_redondeado"
         android:hint="Ingresar mail del socio"
+        android:inputType="textEmailAddress"
         android:maxLines="1"
+        android:padding="12dp"
         android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <android.widget.EditText
-        android:id="@+id/etMail2"
+    <EditText
+        android:id="@+id/etActividad"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="460dp"
-        android:background="@color/white"
-        android:hint="Acttividad"
+        android:background="@drawable/fondo_edittext_redondeado"
+        android:hint="Actividad"
+        android:inputType="text"
         android:maxLines="1"
+        android:padding="12dp"
         android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.widget.EditText
+    <EditText
         android:id="@+id/etPrecioActividad"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="520dp"
-        android:background="@color/white"
+        android:background="@drawable/fondo_edittext_redondeado"
         android:hint="Precio Actividad"
+        android:inputType="numberDecimal"
         android:maxLines="1"
+        android:padding="12dp"
         android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"

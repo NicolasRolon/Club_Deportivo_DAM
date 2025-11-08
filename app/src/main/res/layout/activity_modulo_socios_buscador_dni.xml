@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ModuloSociosBuscadorDni">
+
     <ImageView
         android:id="@+id/backgroundImageView"
         android:layout_width="0dp"
@@ -17,52 +18,188 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
-    <Button
-        android:id="@+id/btnBuscar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/black"
-        android:text="Buscar DNI"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gemini_generated_image_nu2lsenu2lsenu2l__1_" />
 
-    <android.widget.EditText
+    <EditText
         android:id="@+id/etDni"
         android:layout_width="300dp"
         android:layout_height="48dp"
-        android:layout_marginTop="280dp"
-        android:maxLines="1"
-        android:singleLine="true"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/fondo_edittext_redondeado"
         android:hint="Introduce tu DNI"
+        android:inputType="number"
+        android:maxLines="1"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/white"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Buscar DNI"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDni" />
+
+
+    <!-- Sección de Resultados -->
+    <TextView
+        android:id="@+id/tvLabelNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/fondo_edittext_redondeado"
+        android:padding="4dp"
+        android:text="Nombre:"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
+
+    <TextView
+        android:id="@+id/tvNombreResultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/fondo_edittext_redondeado"
+        android:padding="4dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvLabelNombre"
+        app:layout_constraintTop_toTopOf="@+id/tvLabelNombre"
+        tools:text="Juan" />
+
+    <TextView
+        android:id="@+id/tvLabelApellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/fondo_edittext_redondeado"
+        android:padding="4dp"
+        android:text="Apellido:"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/tvLabelNombre"
+        app:layout_constraintTop_toBottomOf="@id/tvNombreResultado" />
+
+    <TextView
+        android:id="@+id/tvApellidoResultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fondo_edittext_redondeado"
+        android:padding="4dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/tvNombreResultado"
+        app:layout_constraintStart_toStartOf="@id/tvNombreResultado"
+        app:layout_constraintTop_toTopOf="@+id/tvLabelApellido"
+        tools:text="Pérez" />
+
+    <TextView
+        android:id="@+id/tvLabelMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/fondo_edittext_redondeado"
+        android:padding="4dp"
+        android:text="Mail:"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/tvLabelApellido"
+        app:layout_constraintTop_toBottomOf="@id/tvApellidoResultado" />
+
+    <TextView
+        android:id="@+id/tvMailResultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fondo_edittext_redondeado"
+        android:padding="4dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/tvApellidoResultado"
+        app:layout_constraintStart_toStartOf="@id/tvApellidoResultado"
+        app:layout_constraintTop_toTopOf="@+id/tvLabelMail"
+        tools:text="juan.perez@example.com" />
+
+    <TextView
+        android:id="@+id/tvLabelCondicion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/fondo_edittext_redondeado"
+        android:padding="4dp"
+        android:text="Condición:"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/tvLabelMail"
+        app:layout_constraintTop_toBottomOf="@id/tvMailResultado" />
+
+    <TextView
+        android:id="@+id/tvCondicionResultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fondo_edittext_redondeado"
+        android:padding="4dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/tvMailResultado"
+        app:layout_constraintStart_toStartOf="@id/tvMailResultado"
+        app:layout_constraintTop_toTopOf="@id/tvLabelCondicion"
+        tools:text="Socio" />
+
+    <Button
+        android:id="@+id/btnBorrarCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="Borrar Cliente"
+        app:layout_constraintBottom_toTopOf="@+id/btnAtras"
+        app:layout_constraintEnd_toStartOf="@+id/btnRegistrarCuota"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnRegistrarCuota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Registrar Cuota"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBorrarCliente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnBorrarCliente" />
 
     <Button
         android:id="@+id/btnAtras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/black"
+        android:layout_marginBottom="32dp"
         android:text="Atras"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.623" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
