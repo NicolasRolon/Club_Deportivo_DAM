@@ -36,26 +36,30 @@ class AgregarCliente : AppCompatActivity() {
             val mail = etMail.text.toString()
 
             if (dni.isNotEmpty() && nombre.isNotEmpty() && apellido.isNotEmpty() && mail.isNotEmpty()) {
-                try {
-                    val admin = AdminSQLiteOpenHelper(this, "club_deportivo.db", null, 1)
+                val admin = AdminSQLiteOpenHelper(this, "club_deportivo.db", null, 1)
 
-                    if (cbEsSocio.isChecked) {
-                        admin.addSocio(dni, nombre, apellido, mail)
-                        Toast.makeText(this, "Socio registrado exitosamente", Toast.LENGTH_SHORT).show()
-                    } else {
-                        admin.addNoSocio(dni, nombre, apellido, mail)
-                        Toast.makeText(this, "NO Socio registrado exitosamente", Toast.LENGTH_SHORT).show()
+                if (admin.dniExiste(dni)) {
+                    Toast.makeText(this, "Ya existe un cliente con ese DNI", Toast.LENGTH_SHORT).show()
+                } else {
+                    try {
+                        if (cbEsSocio.isChecked) {
+                            admin.addSocio(dni, nombre, apellido, mail)
+                            Toast.makeText(this, "Socio registrado exitosamente", Toast.LENGTH_SHORT).show()
+                        } else {
+                            admin.addNoSocio(dni, nombre, apellido, mail)
+                            Toast.makeText(this, "Cliente (No Socio) registrado exitosamente", Toast.LENGTH_SHORT).show()
+                        }
+
+                        // Limpiamos todos los campos después del registro
+                        etDni.text.clear()
+                        etNombre.text.clear()
+                        etApellido.text.clear()
+                        etMail.text.clear()
+                        cbEsSocio.isChecked = false
+
+                    } catch (e: Exception) {
+                        Toast.makeText(this, "Error al registrar el cliente: ${e.message}", Toast.LENGTH_LONG).show()
                     }
-
-                    // Limpiamos todos los campos después del registro
-                    etDni.text.clear()
-                    etNombre.text.clear()
-                    etApellido.text.clear()
-                    etMail.text.clear()
-                    cbEsSocio.isChecked = false // También reseteamos el CheckBox
-
-                } catch (e: Exception) {
-                    Toast.makeText(this, "Error al registrar el cliente: ${e.message}", Toast.LENGTH_LONG).show()
                 }
             } else {
                 Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()

@@ -59,13 +59,8 @@ class AdminSQLiteOpenHelper(context: Context, name: String, factory: SQLiteDatab
         db.close()
     }
 
-    /**
-     * Busca un cliente por su DNI en ambas tablas (socios y noSocio).
-     * @return Un objeto Cliente si se encuentra, o null si no existe.
-     */
     fun getClientePorDni(dni: String): Cliente? {
         val db = this.readableDatabase
-        // Primero, busca en la tabla de socios
         var cursor = db.rawQuery("SELECT nombre, apellido, mail FROM socios WHERE dni=?", arrayOf(dni))
         if (cursor.moveToFirst()) {
             val nombre = cursor.getString(0)
@@ -75,9 +70,8 @@ class AdminSQLiteOpenHelper(context: Context, name: String, factory: SQLiteDatab
             db.close()
             return Cliente(nombre, apellido, mail, true) // Es socio
         }
-        cursor.close() // Cerramos el primer cursor si no encontró nada
+        cursor.close()
 
-        // Si no es socio, busca en la tabla de no socios
         cursor = db.rawQuery("SELECT nombre, apellido, mail FROM noSocio WHERE dni=?", arrayOf(dni))
         if (cursor.moveToFirst()) {
             val nombre = cursor.getString(0)
@@ -87,8 +81,31 @@ class AdminSQLiteOpenHelper(context: Context, name: String, factory: SQLiteDatab
             db.close()
             return Cliente(nombre, apellido, mail, false) // No es socio
         }
-        cursor.close() // Cerramos el segundo cursor
-        db.close() // Cerramos la base de datos
-        return null // No se encontró en ninguna tabla
+        cursor.close()
+        db.close()
+        return null
+    }
+
+    /**
+     * Verifica si un DNI ya existe en la tabla de socios o no socios.
+     * @return True si el DNI ya existe, False en caso contrario.
+     */
+    fun dniExiste(dni: String): Boolean {
+        val db = this.readableDatabase
+        var cursor = db.rawQuery("SELECT dni FROM socios WHERE dni=?", arrayOf(dni))
+        var existe = cursor.count > 0
+        cursor.close()
+
+        if (existe) {
+            db.close()
+            return true
+        }
+
+        cursor = db.rawQuery("SELECT dni FROM noSocio WHERE dni=?", arrayOf(dni))
+        existe = cursor.count > 0
+        cursor.close()
+        
+        db.close()
+        return existe
     }
 }
