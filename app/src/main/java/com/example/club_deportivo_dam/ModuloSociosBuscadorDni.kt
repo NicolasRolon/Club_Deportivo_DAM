@@ -24,6 +24,7 @@ class ModuloSociosBuscadorDni : AppCompatActivity() {
         val etDni = findViewById<EditText>(R.id.etDni)
         val btnBuscar = findViewById<Button>(R.id.btnBuscar)
         val btnAtras = findViewById<Button>(R.id.btnAtras)
+        val btnBorrarCliente = findViewById<Button>(R.id.btnBorrarCliente)
 
         val tvNombreResultado = findViewById<TextView>(R.id.tvNombreResultado)
         val tvApellidoResultado = findViewById<TextView>(R.id.tvApellidoResultado)
@@ -52,6 +53,29 @@ class ModuloSociosBuscadorDni : AppCompatActivity() {
                 }
             } else {
                 Toast.makeText(this, "Por favor, ingrese un DNI", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        btnBorrarCliente.setOnClickListener {
+            val dni = etDni.text.toString()
+
+            if (dni.isNotEmpty()) {
+                val admin = AdminSQLiteOpenHelper(this, "club_deportivo.db", null, 1)
+                val deletedRows = admin.deleteCliente(dni)
+
+                if (deletedRows > 0) {
+                    Toast.makeText(this, "Cliente borrado exitosamente", Toast.LENGTH_SHORT).show()
+                    // Limpiar campos
+                    etDni.text.clear()
+                    tvNombreResultado.text = ""
+                    tvApellidoResultado.text = ""
+                    tvMailResultado.text = ""
+                    tvCondicionResultado.text = ""
+                } else {
+                    Toast.makeText(this, "No se encontró un cliente con ese DNI para borrar", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "Por favor, ingrese un DNI para borrar", Toast.LENGTH_SHORT).show()
             }
         }
 
