@@ -162,4 +162,16 @@ class AdminSQLiteOpenHelper(context: Context, name: String, factory: SQLiteDatab
         db.close()
         return morosos
     }
+    
+    fun deleteCliente(dni: String): Int {
+        val db = this.writableDatabase
+        // Primero, intentar borrar de la tabla de socios
+        var deletedRows = db.delete("socios", "dni=?", arrayOf(dni))
+        if (deletedRows == 0) {
+            // Si no se borró de socios (porque no existía), intentar borrar de noSocio
+            deletedRows = db.delete("noSocio", "dni=?", arrayOf(dni))
+        }
+        db.close()
+        return deletedRows
+    }
 }
