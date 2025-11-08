@@ -24,7 +24,7 @@ class Activity_MenuPrincipal : AppCompatActivity() {
         // 2. Botón Ver Socios
         val btnVerSocios = findViewById<ImageButton>(R.id.btnVerSocios)
         btnVerSocios.setOnClickListener {
-            val intent = Intent(this, moduloSocios::class.java)
+            val intent = Intent(this, ModuloSociosBuscadorDni::class.java)
             startActivity(intent)
         }
 

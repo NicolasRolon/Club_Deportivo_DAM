@@ -44,7 +44,7 @@ class AgregarCliente : AppCompatActivity() {
                         Toast.makeText(this, "Socio registrado exitosamente", Toast.LENGTH_SHORT).show()
                     } else {
                         admin.addNoSocio(dni, nombre, apellido, mail)
-                        Toast.makeText(this, "Cliente (No Socio) registrado exitosamente", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "NO Socio registrado exitosamente", Toast.LENGTH_SHORT).show()
                     }
 
                     // Limpiamos todos los campos después del registro
