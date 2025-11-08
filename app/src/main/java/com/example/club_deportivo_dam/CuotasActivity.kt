@@ -27,7 +27,7 @@ class CuotasActivity : AppCompatActivity() {
                 listaMorososString.add(texto)
             }
         } else {
-            listaMorososString.add("¡Felicidades! No hay ningun socio moroso.")
+            listaMorososString.add("¡Felicidades! No hay socios morosos!!.")
         }
 
         // 3. Crear el adaptador y asignarlo al ListView
