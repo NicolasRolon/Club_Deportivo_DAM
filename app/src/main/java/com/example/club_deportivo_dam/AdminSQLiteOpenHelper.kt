@@ -14,6 +14,13 @@ data class SocioMoroso(val dni: String, val nombre: String, val apellido: String
 
 class AdminSQLiteOpenHelper(context: Context, name: String, factory: SQLiteDatabase.CursorFactory?, version: Int) : SQLiteOpenHelper(context, name, factory, version) {
 
+    companion object {
+        const val DATABASE_VERSION = 2
+        const val DATABASE_NAME = "club_deportivo.db"
+    }
+
+    constructor(context: Context) : this(context, DATABASE_NAME, null, DATABASE_VERSION)
+
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL("CREATE TABLE usuarios(user TEXT PRIMARY KEY, pass TEXT)")
         db.execSQL("CREATE TABLE socios(dni TEXT PRIMARY KEY, nombre TEXT, apellido TEXT, mail TEXT)")

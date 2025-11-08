@@ -35,7 +35,7 @@ class ModuloSociosBuscadorDni : AppCompatActivity() {
             val dni = etDni.text.toString()
 
             if (dni.isNotEmpty()) {
-                val admin = AdminSQLiteOpenHelper(this, "club_deportivo.db", null, 1)
+                val admin = AdminSQLiteOpenHelper(this)
                 val cliente = admin.getClientePorDni(dni)
 
                 if (cliente != null) {
@@ -60,7 +60,7 @@ class ModuloSociosBuscadorDni : AppCompatActivity() {
             val dni = etDni.text.toString()
 
             if (dni.isNotEmpty()) {
-                val admin = AdminSQLiteOpenHelper(this, "club_deportivo.db", null, 1)
+                val admin = AdminSQLiteOpenHelper(this)
                 val deletedRows = admin.deleteCliente(dni)
 
                 if (deletedRows > 0) {

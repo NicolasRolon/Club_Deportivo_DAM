@@ -30,7 +30,7 @@ class FirstAppActivity : AppCompatActivity() {
             val pass = etPassword.text.toString()
 
             if (user.isNotEmpty() && pass.isNotEmpty()) {
-                val admin = AdminSQLiteOpenHelper(this, "club_deportivo.db", null, 1)
+                val admin = AdminSQLiteOpenHelper(this)
                 if (admin.checkUser(user, pass)) {
                     val intent = Intent(this, Activity_MenuPrincipal::class.java)
                     startActivity(intent)

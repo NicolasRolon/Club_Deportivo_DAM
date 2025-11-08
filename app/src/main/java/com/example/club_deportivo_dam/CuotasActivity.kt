@@ -16,7 +16,7 @@ class CuotasActivity : AppCompatActivity() {
         val btnAtras = findViewById<Button>(R.id.btnAtras)
 
         // 1. Obtener los datos de la base de datos
-        val admin = AdminSQLiteOpenHelper(this, "club_deportivo.db", null, 1)
+        val admin = AdminSQLiteOpenHelper(this)
         val listaMorosos = admin.getMorosos()
 
         // 2. Formatear los datos para el ListView
@@ -27,7 +27,7 @@ class CuotasActivity : AppCompatActivity() {
                 listaMorososString.add(texto)
             }
         } else {
-            listaMorososString.add("¡Felicidades! No hay socios morosos!!.")
+            listaMorososString.add("¡Felicidades! No hay socios morosos!.")
         }
 
         // 3. Crear el adaptador y asignarlo al ListView

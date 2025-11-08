@@ -36,7 +36,7 @@ class AgregarCliente : AppCompatActivity() {
             val mail = etMail.text.toString()
 
             if (dni.isNotEmpty() && nombre.isNotEmpty() && apellido.isNotEmpty() && mail.isNotEmpty()) {
-                val admin = AdminSQLiteOpenHelper(this, "club_deportivo.db", null, 1)
+                val admin = AdminSQLiteOpenHelper(this)
 
                 if (admin.dniExiste(dni)) {
                     Toast.makeText(this, "Ya existe un cliente con ese DNI", Toast.LENGTH_SHORT).show()
