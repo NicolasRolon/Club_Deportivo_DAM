@@ -24,7 +24,7 @@ class ModuloSociosBuscadorDni : AppCompatActivity() {
         val etDni = findViewById<EditText>(R.id.etDni)
         val btnBuscar = findViewById<Button>(R.id.btnBuscar)
         val btnAtras = findViewById<Button>(R.id.btnAtras)
-        val btnBorrarCliente = findViewById<Button>(R.id.btnBorrarCliente)
+        val btnBorrarCliente = findViewById<Button>(R.id.btnBorrarCliente) // Make sure this ID exists in your XML
 
         val tvNombreResultado = findViewById<TextView>(R.id.tvNombreResultado)
         val tvApellidoResultado = findViewById<TextView>(R.id.tvApellidoResultado)
