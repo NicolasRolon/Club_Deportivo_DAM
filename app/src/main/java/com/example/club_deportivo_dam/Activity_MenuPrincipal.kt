@@ -4,11 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class Activity_MenuPrincipal : AppCompatActivity() {
+class Activity_MenuPrincipal : BaseActivity() { // Hereda de BaseActivity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -45,9 +44,12 @@ class Activity_MenuPrincipal : AppCompatActivity() {
         // 5. Botón Pagos
         val btnPagos = findViewById<ImageButton>(R.id.btnPagos)
         btnPagos.setOnClickListener {
-            val intent = Intent(this, PagoDiarioActivity::class.java)
+            val intent = Intent(this, PagosActivity::class.java)
             startActivity(intent)
         }
+
+        // El botón y la lógica de Cerrar Sesión se han movido a BaseActivity
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

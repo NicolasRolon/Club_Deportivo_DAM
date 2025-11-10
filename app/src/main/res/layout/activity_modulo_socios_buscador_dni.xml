@@ -86,7 +86,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvLabelNombre"
-        app:layout_constraintTop_toTopOf="@+id/tvLabelNombre"
+        app:layout_constraintTop_toTopOf="@id/tvLabelNombre"
         tools:text="Juan" />
 
     <TextView
@@ -113,7 +113,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@id/tvNombreResultado"
         app:layout_constraintStart_toStartOf="@id/tvNombreResultado"
-        app:layout_constraintTop_toTopOf="@+id/tvLabelApellido"
+        app:layout_constraintTop_toTopOf="@id/tvLabelApellido"
         tools:text="Pérez" />
 
     <TextView
@@ -140,7 +140,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@id/tvApellidoResultado"
         app:layout_constraintStart_toStartOf="@id/tvApellidoResultado"
-        app:layout_constraintTop_toTopOf="@+id/tvLabelMail"
+        app:layout_constraintTop_toTopOf="@id/tvLabelMail"
         tools:text="juan.perez@example.com" />
 
     <TextView
@@ -178,16 +178,16 @@
         android:layout_marginBottom="16dp"
         android:text="Borrar Cliente"
         app:layout_constraintBottom_toTopOf="@+id/btnAtras"
-        app:layout_constraintEnd_toStartOf="@+id/btnRegistrarCuota"
+        app:layout_constraintEnd_toStartOf="@+id/btnRegistrar"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnRegistrarCuota"
+        android:id="@+id/btnRegistrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Registrar Cuota"
+        android:text="Registrar Cuota/Pago"
         app:layout_constraintBottom_toBottomOf="@+id/btnBorrarCliente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnBorrarCliente" />

@@ -4,9 +4,8 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
-import androidx.appcompat.app.AppCompatActivity
 
-class CuotasActivity : AppCompatActivity() {
+class CuotasActivity : BaseActivity() { // Hereda de BaseActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,8 +30,8 @@ class CuotasActivity : AppCompatActivity() {
         }
 
         // 3. Crear el adaptador y asignarlo al ListView
-        // Usamos un layout simple de Android para cada item de la lista
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listaMorososString)
+        // Usamos nuestro layout personalizado para asegurar que el texto sea negro
+        val adapter = ArrayAdapter(this, R.layout.list_item_black_text, listaMorososString)
         lvMorosos.adapter = adapter
 
         // 4. Configurar el botón de atrás

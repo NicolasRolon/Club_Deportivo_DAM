@@ -40,7 +40,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/fondo_edittext_redondeado"
+        android:background="@drawable/list_background_white"
         android:padding="8dp"
         app:layout_constraintBottom_toTopOf="@+id/btnAtras"
         app:layout_constraintEnd_toEndOf="parent"

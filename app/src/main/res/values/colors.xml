@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Colores personalizados para la ActionBar -->
+    <color name="colorPrimary">#1A237E</color> <!-- Un azul oscuro y elegante -->
+    <color name="colorPrimaryDark">#0D123D</color> <!-- Una versión más oscura para la barra de estado -->
 </resources>

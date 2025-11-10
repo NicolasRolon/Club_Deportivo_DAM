@@ -6,11 +6,10 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class AgregarCliente : AppCompatActivity() {
+class AgregarCliente : BaseActivity() { // Hereda de BaseActivity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -30,12 +29,18 @@ class AgregarCliente : AppCompatActivity() {
         val btnAtras = findViewById<Button>(R.id.btnAtras)
 
         btnRegistrar.setOnClickListener {
-            val dni = etDni.text.toString()
+            val dniStr = etDni.text.toString()
             val nombre = etNombre.text.toString()
             val apellido = etApellido.text.toString()
             val mail = etMail.text.toString()
 
-            if (dni.isNotEmpty() && nombre.isNotEmpty() && apellido.isNotEmpty() && mail.isNotEmpty()) {
+            if (dniStr.isNotEmpty() && nombre.isNotEmpty() && apellido.isNotEmpty() && mail.isNotEmpty()) {
+                val dni = dniStr.toLongOrNull()
+                if (dni == null) {
+                    Toast.makeText(this, "El DNI ingresado no es válido", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+
                 val admin = AdminSQLiteOpenHelper(this)
 
                 if (admin.dniExiste(dni)) {
