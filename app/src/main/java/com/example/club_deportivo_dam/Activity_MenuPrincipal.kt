@@ -27,21 +27,14 @@ class Activity_MenuPrincipal : BaseActivity() { // Hereda de BaseActivity
             startActivity(intent)
         }
 
-        // 3. Botón No Socios
-        val btnNoSocios = findViewById<ImageButton>(R.id.btnNoSocios)
-        btnNoSocios.setOnClickListener {
-            val intent = Intent(this, ModuloNoSocios::class.java)
-            startActivity(intent)
-        }
-
-        // 4. Botón Cuotas
+        // 3. Botón Cuotas
         val btnCuotas = findViewById<ImageButton>(R.id.btnCuotas)
         btnCuotas.setOnClickListener {
             val intent = Intent(this, CuotasActivity::class.java)
             startActivity(intent)
         }
 
-        // 5. Botón Pagos
+        // 4. Botón Pagos
         val btnPagos = findViewById<ImageButton>(R.id.btnPagos)
         btnPagos.setOnClickListener {
             val intent = Intent(this, PagosActivity::class.java)

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".AgregarCliente">
 
-
+    <!-- Imagen de fondo principal -->
     <ImageView
         android:id="@+id/backgroundImageView2"
         android:layout_width="0dp"
@@ -16,27 +16,27 @@
         android:src="@drawable/fondo_aplicacion_clubdeportivo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         tools:ignore="ContentDescription" />
 
+    <!-- Logo superior -->
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gemini_generated_image_nu2lsenu2lsenu2l__1_" />
 
-
+    <!-- Campos de texto para los datos del cliente -->
     <EditText
         android:id="@+id/etDni"
         android:layout_width="300dp"
         android:layout_height="48dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/fondo_edittext_redondeado"
         android:hint="Ingresar DNI del cliente"
         android:inputType="number"
@@ -46,49 +46,14 @@
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvSocio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="480dp"
-        android:background="@drawable/button_background_cream"
-        android:includeFontPadding="false"
-        android:padding="8dp"
-        android:text="¿Es socio?"
-        android:textColor="@android:color/black"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.263"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/etApellido"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="348dp"
-        android:background="@drawable/fondo_edittext_redondeado"
-        android:hint="Ingresar apellido del cliente"
-        android:inputType="textPersonName"
-        android:maxLines="1"
-        android:padding="12dp"
-        android:singleLine="true"
-        android:textColor="@android:color/black"
-        android:textColorHint="@android:color/darker_gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/imageView3" />
 
     <EditText
         android:id="@+id/etNombre"
         android:layout_width="300dp"
         android:layout_height="48dp"
-        android:layout_marginTop="288dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/fondo_edittext_redondeado"
         android:hint="Ingresar nombre del cliente"
         android:inputType="textPersonName"
@@ -97,16 +62,32 @@
         android:singleLine="true"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/darker_gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/etDni"
+        app:layout_constraintStart_toStartOf="@id/etDni"
+        app:layout_constraintTop_toBottomOf="@id/etDni" />
+
+    <EditText
+        android:id="@+id/etApellido"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/fondo_edittext_redondeado"
+        android:hint="Ingresar apellido del cliente"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:padding="12dp"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="@id/etNombre"
+        app:layout_constraintStart_toStartOf="@id/etNombre"
+        app:layout_constraintTop_toBottomOf="@id/etNombre" />
 
     <EditText
         android:id="@+id/etMail"
         android:layout_width="300dp"
         android:layout_height="48dp"
-        android:layout_marginTop="408dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/fondo_edittext_redondeado"
         android:hint="Ingresar mail del cliente"
         android:inputType="textEmailAddress"
@@ -115,44 +96,60 @@
         android:singleLine="true"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/darker_gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/etApellido"
+        app:layout_constraintStart_toStartOf="@id/etApellido"
+        app:layout_constraintTop_toBottomOf="@id/etApellido" />
 
-    <CheckBox
-        android:id="@+id/cbEsSocio"
-        android:layout_width="50dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="480dp"
-        android:scaleX="1.5"
-        android:scaleY="1.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.709"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/socioContainer"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background_cream"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="@id/etMail"
+        app:layout_constraintStart_toStartOf="@id/etMail"
+        app:layout_constraintTop_toBottomOf="@id/etMail">
 
+        <TextView
+            android:id="@+id/tvSocio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="¿Es socio?"
+            android:textColor="@android:color/black"
+            android:textSize="28sp" />
+
+        <CheckBox
+            android:id="@+id/cbEsSocio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.5"
+            android:scaleY="1.5" />
+
+    </LinearLayout>
+
+    <!-- Botones de acción -->
     <Button
         android:id="@+id/btnRegistrar"
         android:layout_width="246dp"
         android:layout_height="58dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="16dp"
         android:text="Registrar cliente"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnAtras"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnAtras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="24dp"
         android:text="Atras"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
