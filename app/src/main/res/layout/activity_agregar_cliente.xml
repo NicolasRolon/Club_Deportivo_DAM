@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="480dp"
-        android:background="@drawable/fondo_edittext_redondeado"
+        android:background="@drawable/button_background_cream"
         android:includeFontPadding="false"
         android:padding="8dp"
         android:text="¿Es socio?"
