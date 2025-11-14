@@ -21,9 +21,6 @@
         <item name="background">@color/colorPrimary</item>
     </style>
 
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Club_Deportivo_DAM" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
-    </style>
+    <!-- El tema conflictivo Base.Theme.Club_Deportivo_DAM ha sido eliminado -->
+
 </resources>
