@@ -9,7 +9,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class AgregarCliente : BaseActivity() { // Hereda de BaseActivity
+class AgregarCliente : BaseActivity() { 
+
+    private lateinit var pdfGenerator: PdfGenerator
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,6 +22,8 @@ class AgregarCliente : BaseActivity() { // Hereda de BaseActivity
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        pdfGenerator = PdfGenerator(this)
 
         val etDni = findViewById<EditText>(R.id.etDni)
         val etNombre = findViewById<EditText>(R.id.etNombre)
@@ -50,6 +55,8 @@ class AgregarCliente : BaseActivity() { // Hereda de BaseActivity
                         if (cbEsSocio.isChecked) {
                             admin.addSocio(dni, nombre, apellido, mail)
                             Toast.makeText(this, "Socio registrado exitosamente", Toast.LENGTH_SHORT).show()
+                            // ¡Generar el carnet en PDF!
+                            pdfGenerator.generarCarnetPdf(nombre, apellido, dni)
                         } else {
                             admin.addNoSocio(dni, nombre, apellido, mail)
                             Toast.makeText(this, "Cliente (No Socio) registrado exitosamente", Toast.LENGTH_SHORT).show()
@@ -72,7 +79,7 @@ class AgregarCliente : BaseActivity() { // Hereda de BaseActivity
         }
 
         btnAtras.setOnClickListener {
-            finish() // Cierra la actividad actual y vuelve a la anterior
+            finish() 
         }
     }
 }

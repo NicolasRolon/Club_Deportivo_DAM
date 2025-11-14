@@ -17,7 +17,7 @@ data class PagoSocio(val id: Int, val dni: Long, val monto: Double, val fecha: S
 class AdminSQLiteOpenHelper(context: Context, name: String, factory: SQLiteDatabase.CursorFactory?, version: Int) : SQLiteOpenHelper(context, name, factory, version) {
 
     companion object {
-        const val DATABASE_VERSION = 6 // Versión actualizada
+        const val DATABASE_VERSION = 7 // Versión actualizada
         const val DATABASE_NAME = "club_deportivo.db"
     }
 
@@ -29,6 +29,8 @@ class AdminSQLiteOpenHelper(context: Context, name: String, factory: SQLiteDatab
         db.execSQL("CREATE TABLE noSocio(dni INTEGER PRIMARY KEY, nombre TEXT, apellido TEXT, mail TEXT)")
         db.execSQL("CREATE TABLE cuota(cuota_id INTEGER PRIMARY KEY AUTOINCREMENT, socio_dni INTEGER, monto REAL, fecha_pago TEXT, fecha_vencimiento TEXT, FOREIGN KEY(socio_dni) REFERENCES socios(dni))")
         db.execSQL("CREATE TABLE pago(pago_id INTEGER PRIMARY KEY AUTOINCREMENT, nosocio_dni INTEGER, monto REAL, fecha_pago TEXT, FOREIGN KEY(nosocio_dni) REFERENCES noSocio(dni))")
+        db.execSQL("INSERT INTO socios (dni, nombre, apellido, mail) VALUES (12345678, 'Juan', 'Pérez', 'juanperez12@gmail.com')")
+        db.execSQL("INSERT INTO cuota (socio_dni, monto, fecha_pago, fecha_vencimiento) VALUES (12345678, 100.0, '2023-06-01', '2023-07-01')")
 
         val values = ContentValues()
         values.put("user", "admin")
