@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".Activity_MenuPrincipal">
 
     <ImageView
@@ -140,7 +141,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/btnCuotas"
             app:layout_constraintStart_toStartOf="@id/btnCuotas"
-            app:layout_constraintTop_toBottomOf="@id/btnCuotas" />
+            app:layout_constraintTop_toBottomOf="@+id/btnCuotas" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -178,7 +179,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/btnPagos"
             app:layout_constraintStart_toStartOf="@id/btnPagos"
-            app:layout_constraintTop_toBottomOf="@id/btnPagos" />
+            app:layout_constraintTop_toBottomOf="@+id/btnPagos" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

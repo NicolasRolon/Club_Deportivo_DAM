@@ -16,19 +16,23 @@
         android:theme="@style/Theme.Club_Deportivo_DAM">
         <activity
             android:name=".RegistrarCuotaActivity"
+            android:label="@string/registrar_cuota"
             android:exported="false" />
         <activity
             android:name=".RegistrarPagoActivity"
+            android:label="@string/registrar_pago_diario"
             android:exported="false" />
         <activity
             android:name=".PagosActivity"
+            android:label="@string/pagos"
             android:exported="false" />
         <activity
             android:name=".CuotasActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Club_Deportivo_DAM" />
+            android:label="Socios Morosos"
+            android:exported="false" />
         <activity
             android:name=".Activity_MenuPrincipal"
+            android:label="@string/menu_principal"
             android:exported="false" />
         <activity
             android:name=".moduloSocios"
@@ -38,16 +42,18 @@
             android:exported="false" />
         <activity
             android:name=".AgregarCliente"
+            android:label="@string/agregar_cliente"
             android:exported="false" />
         <activity
             android:name=".ModuloSociosBuscadorDni"
+            android:label="@string/buscar_cliente"
             android:exported="false" />
         <activity
             android:name=".FirstAppActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Club_Deportivo_DAM.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

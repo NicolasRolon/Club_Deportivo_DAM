@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c166dd49-6308-4569-aae1-4c606d1bd299" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/club_deportivo_dam/Activity_MenuPrincipal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/club_deportivo_dam/Activity_MenuPrincipal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/club_deportivo_dam/First2Fragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/club_deportivo_dam/FirstAppActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/club_deportivo_dam/FirstAppActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/club_deportivo_dam/FirstFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/club_deportivo_dam/Second2Fragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/club_deportivo_dam/SecondFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_cuotas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_cuotas.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_first_app.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_first_app.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_menu_principal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_menu_principal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_modulo_socios_buscador_dni.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_modulo_socios_buscador_dni.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_pagos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_pagos.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_registrar_cuota.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_registrar_cuota.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_registrar_pago.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_registrar_pago.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/content_cuotas.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/content_pago_diario.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_first.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_first2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_second.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_second2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/navigation/nav_graph.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/navigation/nav_graph2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values-v23/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/themes.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "NicolasRolon"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/NicolasRolon/Club_Deportivo_DAM",
+    "accountId": "5ef10d1f-c5df-4ee4-9885-aca35e420dd4"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="35TPDwDYinafw2aov571IVG02bs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "android.gradle.sync.needed": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Usuario/Desktop/IFTS/DAM/Prueba Club/Club Deportivo/app"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c166dd49-6308-4569-aae1-4c606d1bd299" name="Changes" comment="" />
+      <created>1763130972430</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763130972430</updated>
+    </task>
+    <servers />
+  </component>
+</project>
