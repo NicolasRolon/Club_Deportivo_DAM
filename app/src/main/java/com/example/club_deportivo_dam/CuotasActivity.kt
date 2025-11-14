@@ -5,7 +5,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 
-class CuotasActivity : BaseActivity() { // Hereda de BaseActivity
+class CuotasActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,11 +14,11 @@ class CuotasActivity : BaseActivity() { // Hereda de BaseActivity
         val lvMorosos = findViewById<ListView>(R.id.lvMorosos)
         val btnAtras = findViewById<Button>(R.id.btnAtras)
 
-        // 1. Obtener los datos de la base de datos
+        // Obtiene los datos de los socios morosos desde la base de datos.
         val admin = AdminSQLiteOpenHelper(this)
         val listaMorosos = admin.getMorosos()
 
-        // 2. Formatear los datos para el ListView
+        // Formatea los datos para mostrarlos en el ListView.
         val listaMorososString = mutableListOf<String>()
         if (listaMorosos.isNotEmpty()) {
             for (socio in listaMorosos) {
@@ -26,17 +26,17 @@ class CuotasActivity : BaseActivity() { // Hereda de BaseActivity
                 listaMorososString.add(texto)
             }
         } else {
-            listaMorososString.add("¡Felicidades! No hay socios morosos!.")
+            listaMorososString.add("¡Felicidades! No hay socios morosos.")
         }
 
-        // 3. Crear el adaptador y asignarlo al ListView
-        // Usamos nuestro layout personalizado para asegurar que el texto sea negro
+        // Crea el adaptador y lo asigna al ListView.
+        // Uso un layout personalizado (list_item_black_text) para que el texto se vea negro.
         val adapter = ArrayAdapter(this, R.layout.list_item_black_text, listaMorososString)
         lvMorosos.adapter = adapter
 
-        // 4. Configurar el botón de atrás
+        // Configura el botón para volver atrás.
         btnAtras.setOnClickListener {
-            finish()
+            finish() // Cierra la actividad actual.
         }
     }
 }

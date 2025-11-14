@@ -9,7 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class AgregarCliente : BaseActivity() { 
+class AgregarCliente : BaseActivity() {
 
     private lateinit var pdfGenerator: PdfGenerator
 
@@ -23,8 +23,10 @@ class AgregarCliente : BaseActivity() {
             insets
         }
 
+        // Inicializa el generador de PDF.
         pdfGenerator = PdfGenerator(this)
 
+        // Obtiene las referencias a las vistas del layout.
         val etDni = findViewById<EditText>(R.id.etDni)
         val etNombre = findViewById<EditText>(R.id.etNombre)
         val etApellido = findViewById<EditText>(R.id.etApellido)
@@ -33,12 +35,14 @@ class AgregarCliente : BaseActivity() {
         val btnRegistrar = findViewById<Button>(R.id.btnRegistrar)
         val btnAtras = findViewById<Button>(R.id.btnAtras)
 
+        // Configura el listener para el botón de registrar.
         btnRegistrar.setOnClickListener {
             val dniStr = etDni.text.toString()
             val nombre = etNombre.text.toString()
             val apellido = etApellido.text.toString()
             val mail = etMail.text.toString()
 
+            // Valida que todos los campos estén completos.
             if (dniStr.isNotEmpty() && nombre.isNotEmpty() && apellido.isNotEmpty() && mail.isNotEmpty()) {
                 val dni = dniStr.toLongOrNull()
                 if (dni == null) {
@@ -46,23 +50,26 @@ class AgregarCliente : BaseActivity() {
                     return@setOnClickListener
                 }
 
+                // Inicializa el helper de la base de datos.
                 val admin = AdminSQLiteOpenHelper(this)
 
+                // Verifica si el DNI ya existe.
                 if (admin.dniExiste(dni)) {
                     Toast.makeText(this, "Ya existe un cliente con ese DNI", Toast.LENGTH_SHORT).show()
                 } else {
                     try {
+                        // Si es socio, lo agrega a la tabla de socios y genera el carnet.
                         if (cbEsSocio.isChecked) {
                             admin.addSocio(dni, nombre, apellido, mail)
                             Toast.makeText(this, "Socio registrado exitosamente", Toast.LENGTH_SHORT).show()
-                            // ¡Generar el carnet en PDF!
                             pdfGenerator.generarCarnetPdf(nombre, apellido, dni)
                         } else {
+                            // Si no es socio, lo agrega a la tabla de no socios.
                             admin.addNoSocio(dni, nombre, apellido, mail)
                             Toast.makeText(this, "Cliente (No Socio) registrado exitosamente", Toast.LENGTH_SHORT).show()
                         }
 
-                        // Limpiamos todos los campos después del registro
+                        // Limpia los campos después del registro.
                         etDni.text.clear()
                         etNombre.text.clear()
                         etApellido.text.clear()
@@ -78,8 +85,9 @@ class AgregarCliente : BaseActivity() {
             }
         }
 
+        // Configura el listener para el botón de atrás.
         btnAtras.setOnClickListener {
-            finish() 
+            finish() // Cierra la actividad actual.
         }
     }
 }

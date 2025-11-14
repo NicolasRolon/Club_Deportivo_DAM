@@ -5,30 +5,32 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 
-// Esta es nuestra Activity "Maestra".
-// Contiene la lógica común para el menú de opciones.
+// Activity base que contiene la lógica común para el menú de opciones (ej: Cerrar Sesión).
+// Heredo de esta clase en las demás Activities para reutilizar el menú.
 abstract class BaseActivity : AppCompatActivity() {
 
+    // Crea el menú de opciones en la ActionBar.
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        // Inflamos el menú (main_menu.xml) que creamos.
-        // Esto añade la opción "Cerrar Sesión" a la barra de la aplicación.
+        // Infla el layout del menú (main_menu.xml) para mostrarlo.
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
 
+    // Maneja los clics en los items del menú.
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Verificamos si la opción que se ha pulsado es la de "Cerrar Sesión".
         return when (item.itemId) {
+            // Si se presiona "Cerrar Sesión".
             R.id.action_logout -> {
-                // Creamos el Intent para ir a la pantalla de login.
+                // Navega a la pantalla de login (FirstAppActivity).
                 val intent = Intent(this, FirstAppActivity::class.java)
-                // Añadimos los flags para limpiar el historial de pantallas.
+                // Limpia el historial de pantallas para que el usuario no pueda volver atrás.
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
-                // Cerramos la actividad actual.
+                // Cierra la actividad actual.
                 finish()
                 true
             }
+            // Si es otro item, usa el comportamiento por defecto.
             else -> super.onOptionsItemSelected(item)
         }
     }

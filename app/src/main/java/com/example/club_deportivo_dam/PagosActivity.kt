@@ -4,9 +4,8 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
-import androidx.appcompat.app.AlertDialog
 
-class PagosActivity : BaseActivity() { // Hereda de BaseActivity
+class PagosActivity : BaseActivity() {
 
     private lateinit var lvPagos: ListView
     private lateinit var btnVerSocios: Button
@@ -18,6 +17,7 @@ class PagosActivity : BaseActivity() { // Hereda de BaseActivity
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pagos)
 
+        // Obtiene las referencias a las vistas del layout.
         lvPagos = findViewById(R.id.lvPagos)
         btnVerSocios = findViewById(R.id.btnVerSocios)
         btnVerNoSocios = findViewById(R.id.btnVerNoSocios)
@@ -25,22 +25,26 @@ class PagosActivity : BaseActivity() { // Hereda de BaseActivity
 
         admin = AdminSQLiteOpenHelper(this)
 
-        // Cargar pagos de socios por defecto
+        // Carga el historial de pagos de socios por defecto al abrir la pantalla.
         cargarPagosSocios()
 
+        // Configura el botón para mostrar los pagos de socios.
         btnVerSocios.setOnClickListener {
             cargarPagosSocios()
         }
 
+        // Configura el botón para mostrar los pagos de no socios.
         btnVerNoSocios.setOnClickListener {
             cargarPagosNoSocios()
         }
 
+        // Configura el botón para volver atrás.
         btnAtras.setOnClickListener {
             finish()
         }
     }
 
+    // Carga y muestra el historial de pagos de los socios.
     private fun cargarPagosSocios() {
         val listaPagos = admin.getPagosSocios()
         val listaPagosString = mutableListOf<String>()
@@ -56,10 +60,12 @@ class PagosActivity : BaseActivity() { // Hereda de BaseActivity
             listaPagosString.add("No hay pagos de socios registrados.")
         }
 
+        // Crea el adaptador y lo asigna al ListView.
         val adapter = ArrayAdapter(this, R.layout.list_item_black_text, listaPagosString)
         lvPagos.adapter = adapter
     }
 
+    // Carga y muestra el historial de pagos de los no socios.
     private fun cargarPagosNoSocios() {
         val listaPagos = admin.getPagosNoSocios()
         val listaPagosString = mutableListOf<String>()
@@ -74,6 +80,7 @@ class PagosActivity : BaseActivity() { // Hereda de BaseActivity
             listaPagosString.add("No hay pagos de no socios registrados.")
         }
 
+        // Crea el adaptador y lo asigna al ListView.
         val adapter = ArrayAdapter(this, R.layout.list_item_black_text, listaPagosString)
         lvPagos.adapter = adapter
     }

@@ -21,17 +21,18 @@ import java.util.Locale
 
 class PdfGenerator(private val context: Context) {
 
+    // Genera un carnet en PDF a partir de los datos del socio.
     fun generarCarnetPdf(nombre: String, apellido: String, dni: Long) {
-        // --- Conversión de DP a Píxeles --- 
+        // Convierte las dimensiones de DP (densit-independent pixels) a píxeles.
         val dpi = context.resources.displayMetrics.density
         val widthInPixels = (400 * dpi).toInt()
         val heightInPixels = (225 * dpi).toInt()
 
-        // 1. Inflar el layout XML del carnet
+        // Infla el layout XML del carnet para poder manipularlo como una vista.
         val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(R.layout.carnet_layout, null)
 
-        // 2. Rellenar los datos en la vista
+        // Rellena los datos del socio en las vistas del layout.
         val nombreCompleto = "$nombre $apellido"
         view.findViewById<TextView>(R.id.nombre_socio_carnet).text = nombreCompleto
         view.findViewById<TextView>(R.id.dni_socio_carnet).text = dni.toString()
@@ -40,41 +41,43 @@ class PdfGenerator(private val context: Context) {
         val fechaAlta = "Miembro desde: ${sdf.format(Date())}"
         view.findViewById<TextView>(R.id.fecha_alta_socio_carnet).text = fechaAlta
 
-        // 3. Medir la vista con el tamaño correcto en PÍXELES
+        // Mide y dibuja la vista con el tamaño exacto que tendrá en el PDF.
         view.measure(
             View.MeasureSpec.makeMeasureSpec(widthInPixels, View.MeasureSpec.EXACTLY),
             View.MeasureSpec.makeMeasureSpec(heightInPixels, View.MeasureSpec.EXACTLY)
         )
         view.layout(0, 0, view.measuredWidth, view.measuredHeight)
 
-        // 4. Crear el documento PDF
+        // Crea un nuevo documento PDF.
         val document = PdfDocument()
         val pageInfo = PdfDocument.PageInfo.Builder(view.measuredWidth, view.measuredHeight, 1).create()
         val page = document.startPage(pageInfo)
         val canvas = page.canvas
 
-        // 5. Dibujar la vista en el lienzo del PDF
+        // Dibuja el contenido de la vista en el lienzo del PDF.
         view.draw(canvas)
         document.finishPage(page)
 
-        // 6. Guardar el archivo PDF
+        // Guarda el archivo PDF en el almacenamiento del dispositivo.
         val fileName = "carnet_${nombre}_${apellido}.pdf"
         try {
+            // Elige el método de guardado según la versión de Android.
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                // Método moderno para Android 10 y superior (no necesita permisos)
+                // Método moderno para Android 10 y superior (usa MediaStore).
                 savePdfWithMediaStore(document, fileName)
             } else {
-                // Método antiguo para versiones anteriores a Android 10
+                // Método antiguo para versiones anteriores (requiere permiso de escritura).
                 savePdfLegacy(document, fileName)
             }
         } catch (e: Exception) {
             e.printStackTrace()
             Toast.makeText(context, "Error al guardar el PDF: ${e.message}", Toast.LENGTH_LONG).show()
         } finally {
-            document.close()
+            document.close() // Cierra el documento para liberar recursos.
         }
     }
 
+    // Guarda el PDF usando MediaStore (recomendado para Android 10+).
     @RequiresApi(Build.VERSION_CODES.Q)
     private fun savePdfWithMediaStore(document: PdfDocument, fileName: String) {
         val resolver = context.contentResolver
@@ -94,11 +97,12 @@ class PdfGenerator(private val context: Context) {
         }
     }
 
+    // Guarda el PDF usando el sistema de archivos tradicional (para Android 9 y anteriores).
     private fun savePdfLegacy(document: PdfDocument, fileName: String) {
-        // Comprobar si tenemos permiso para escribir. Si no, no podemos continuar.
+        // Comprueba si se tiene permiso para escribir en el almacenamiento.
         if (ContextCompat.checkSelfPermission(context, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             Toast.makeText(context, "Error: Permiso de almacenamiento no concedido.", Toast.LENGTH_LONG).show()
-            // En una app real, aquí se iniciaría la petición de permiso al usuario.
+            // NOTA: En una aplicación real, aquí se debería solicitar el permiso al usuario.
             return
         }
 

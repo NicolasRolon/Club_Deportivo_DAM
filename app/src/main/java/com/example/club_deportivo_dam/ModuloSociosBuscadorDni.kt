@@ -10,7 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class ModuloSociosBuscadorDni : BaseActivity() { // Hereda de BaseActivity
+class ModuloSociosBuscadorDni : BaseActivity() {
 
     private var clienteEncontrado: Cliente? = null
     private var dniEncontrado: Long = -1
@@ -19,12 +19,14 @@ class ModuloSociosBuscadorDni : BaseActivity() { // Hereda de BaseActivity
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_modulo_socios_buscador_dni)
+        // Ajusta el padding de la vista principal para que no se superponga con las barras del sistema.
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
+        // Obtiene las referencias a las vistas del layout.
         val etDni = findViewById<EditText>(R.id.etDni)
         val btnBuscar = findViewById<Button>(R.id.btnBuscar)
         val btnAtras = findViewById<Button>(R.id.btnAtras)
@@ -36,15 +38,11 @@ class ModuloSociosBuscadorDni : BaseActivity() { // Hereda de BaseActivity
         val tvMailResultado = findViewById<TextView>(R.id.tvMailResultado)
         val tvCondicionResultado = findViewById<TextView>(R.id.tvCondicionResultado)
 
+        // Configura el listener para el botón de buscar.
         btnBuscar.setOnClickListener {
             val dniStr = etDni.text.toString()
-            // Limpiar resultados anteriores
-            clienteEncontrado = null
-            dniEncontrado = -1
-            tvNombreResultado.text = ""
-            tvApellidoResultado.text = ""
-            tvMailResultado.text = ""
-            tvCondicionResultado.text = ""
+            // Limpia los resultados de la búsqueda anterior.
+            limpiarResultados()
 
             if (dniStr.isNotEmpty()) {
                 val dni = dniStr.toLongOrNull()
@@ -55,6 +53,7 @@ class ModuloSociosBuscadorDni : BaseActivity() { // Hereda de BaseActivity
                 val admin = AdminSQLiteOpenHelper(this)
                 val cliente = admin.getClientePorDni(dni)
 
+                // Si se encuentra el cliente, actualiza la UI con sus datos.
                 if (cliente != null) {
                     clienteEncontrado = cliente
                     dniEncontrado = dni
@@ -70,12 +69,14 @@ class ModuloSociosBuscadorDni : BaseActivity() { // Hereda de BaseActivity
             }
         }
 
+        // Configura el listener para el botón de registrar pago o cuota.
         btnRegistrar.setOnClickListener {
             if (clienteEncontrado == null || dniEncontrado == -1L) {
                 Toast.makeText(this, "Primero debe buscar y encontrar un cliente válido", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
+            // Decide a qué pantalla navegar según si el cliente es socio o no.
             if (clienteEncontrado!!.esSocio) {
                 val intent = Intent(this, RegistrarCuotaActivity::class.java)
                 intent.putExtra("SOCIO_DNI", dniEncontrado)
@@ -87,6 +88,7 @@ class ModuloSociosBuscadorDni : BaseActivity() { // Hereda de BaseActivity
             }
         }
 
+        // Configura el listener para el botón de borrar cliente.
         btnBorrarCliente.setOnClickListener {
             val dniStr = etDni.text.toString()
 
@@ -102,14 +104,8 @@ class ModuloSociosBuscadorDni : BaseActivity() { // Hereda de BaseActivity
 
                 if (deletedRows > 0) {
                     Toast.makeText(this, "Cliente borrado exitosamente", Toast.LENGTH_SHORT).show()
-                    // Limpiar campos
+                    limpiarResultados()
                     etDni.text.clear()
-                    tvNombreResultado.text = ""
-                    tvApellidoResultado.text = ""
-                    tvMailResultado.text = ""
-                    tvCondicionResultado.text = ""
-                    clienteEncontrado = null
-                    dniEncontrado = -1
                 } else {
                     Toast.makeText(this, "No se encontró un cliente con ese DNI para borrar", Toast.LENGTH_SHORT).show()
                 }
@@ -118,8 +114,19 @@ class ModuloSociosBuscadorDni : BaseActivity() { // Hereda de BaseActivity
             }
         }
 
+        // Configura el listener para el botón de atrás.
         btnAtras.setOnClickListener {
             finish()
         }
+    }
+
+    // Limpia los campos de texto de los resultados de la búsqueda.
+    private fun limpiarResultados() {
+        findViewById<TextView>(R.id.tvNombreResultado).text = ""
+        findViewById<TextView>(R.id.tvApellidoResultado).text = ""
+        findViewById<TextView>(R.id.tvMailResultado).text = ""
+        findViewById<TextView>(R.id.tvCondicionResultado).text = ""
+        clienteEncontrado = null
+        dniEncontrado = -1
     }
 }
